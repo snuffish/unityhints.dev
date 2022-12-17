@@ -1,0 +1,8 @@
+enabled: true
+names:
+  - Scene
+  - Geometry
+  - Events
+  - Audio
+  - Design Patterns
+  - Monitoring
