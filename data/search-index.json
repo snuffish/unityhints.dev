@@ -44,6 +44,17 @@
   "tags": ["Featured"],
   "updated": null
 },{
+  "id": "delegate",
+  "title": "Delegate & Events",
+  "url": "/delegate",
+  "category": "Events",
+  "keywords": null,
+  "content_html": "<h3 id=\"delegate\">Delegate</h3>\n\n<p>dsds</p>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
   "id": "fmod",
   "title": "FMOD",
   "url": "/fmod",
