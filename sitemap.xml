@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://unityhints.dev/</loc></url>
+<url><loc>https://unityhints.dev/audiosource</loc></url>
+<url><loc>https://unityhints.dev/deprecated/bower-api</loc></url>
+<url><loc>https://unityhints.dev/collider</loc></url>
+<url><loc>https://unityhints.dev/coroutine</loc></url>
+<url><loc>https://unityhints.dev/fmod</loc></url>
+<url><loc>https://unityhints.dev/gameobject</loc></url>
+<url><loc>https://unityhints.dev/input</loc></url>
+<url><loc>https://unityhints.dev/wip/intl-datetime</loc></url>
+<url><loc>https://unityhints.dev/logging</loc></url>
+<url><loc>https://unityhints.dev/monobehaviour</loc></url>
+<url><loc>https://unityhints.dev/wip/php</loc></url>
+<url><loc>https://unityhints.dev/quaternion</loc></url>
+<url><loc>https://unityhints.dev/raycast</loc></url>
+<url><loc>https://unityhints.dev/singleton</loc></url>
+<url><loc>https://unityhints.dev/solid</loc></url>
+<url><loc>https://unityhints.dev/time</loc></url>
+<url><loc>https://unityhints.dev/vector</loc></url>
+<url><loc>https://unityhints.dev/assets/css/style.css</loc></url>
+<url><loc>https://unityhints.dev/redirects.json</loc></url>
+
+</urlset>
+

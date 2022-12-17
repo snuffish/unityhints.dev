@@ -1,0 +1,213 @@
+[
+{
+  "id": "audiosource",
+  "title": "AudioSource",
+  "url": "/audiosource",
+  "category": "Audio",
+  "keywords": null,
+  "content_html": "<h3 id=\"audio\">Audio</h3>\n<pre><code class=\"language-csharp\">public class PlayAudio : MonoBehaviour {\n    public AudioSource audioSource;\n\n    void Start() {\n        audioSource.Play();\n    }\n}\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "deprecated/bower-api",
+  "title": "Bower API",
+  "url": "/deprecated/bower-api",
+  "category": "JavaScript libraries",
+  "keywords": null,
+  "content_html": "<pre><code class=\"language-js\">require('bower').config\n</code></pre>\n\n<pre><code class=\"language-js\">{ cwd: '/Users/rsc',\n  directory: 'bower_components',\n  registry:\n   { search: [ 'https://bower.herokuapp.com' ],\n     register: 'https://bower.herokuapp.com',\n     publish: 'https://bower.herokuapp.com' },\n  shorthandResolver: 'git://github.com//.git',\n  tmp: '/var/folders/5y/190gjd_j2c5bfkn563dk2xdr0000gn/T/rsc/bower',\n  timeout: 30000,\n  ca: { search: [] },\n  strictSsl: true,\n  userAgent: 'node/v0.10.33 darwin x64',\n  color: true,\n  storage:\n   { packages: '/Users/rsc/.cache/bower/packages',\n     links: '/Users/rsc/.local/share/bower/links',\n     completion: '/Users/rsc/.local/share/bower/completion',\n     registry: '/Users/rsc/.cache/bower/registry',\n     empty: '/Users/rsc/.local/share/bower/empty' },\n  interactive: false,\n  argv: { remain: [], cooked: [], original: [] } }\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": null,
+  "updated": null
+},{
+  "id": "collider",
+  "title": "GameObject collisions",
+  "url": "/collider",
+  "category": "Events",
+  "keywords": null,
+  "content_html": "<h3 id=\"collider\">Collider</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>OnColl­isi­onE­nte­r2D</code></td>\n      <td>Called when this collid­er/­rig­idbody has begun touching another rigidb­ody­/co­llider</td>\n    </tr>\n    <tr>\n      <td><code>OnColl­isi­onE­xit2D</code></td>\n      <td>Called when this collid­er/­rig­idbody has stopped touching another rigidb­ody­/co­llider.</td>\n    </tr>\n    <tr>\n      <td><code>OnTrig­ger­Ent­er2D</code></td>\n      <td>Called when this Collider other enters a trigger Collider.</td>\n    </tr>\n    <tr>\n      <td><code>OnTrig­ger­Exi­t2D</code></td>\n      <td>Called when this Collider other has stopped touching a trigger collider.</td>\n    </tr>\n    <tr>\n      <td><code>isTrigger</code></td>\n      <td>Triggers collision without physics</td>\n    </tr>\n    <tr>\n      <td><code>Physic­s.R­aycast</code></td>\n      <td>Checks if there are colliders in a line</td>\n    </tr>\n  </tbody>\n</table>\n\n<h3 id=\"rigidbody\">RigidBody</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>isKine­matic</code></td>\n      <td>Controls whether physics affects the rigidbody.</td>\n    </tr>\n    <tr>\n      <td><code>useGravity</code></td>\n      <td>Controls whether gravity affects this rigidbody.</td>\n    </tr>\n    <tr>\n      <td><code>addForce</code></td>\n      <td>Applies a force of a vector to the rigidbody</td>\n    </tr>\n    <tr>\n      <td><code>AddTorque</code></td>\n      <td>Adds torque to the rigidbody</td>\n    </tr>\n  </tbody>\n</table>\n\n<h2 id=\"usage\">Usage</h2>\n\n<pre><code class=\"language-csharp\">/* Both objects have to have a Collider and one object has to have a Rigidbody for these Events to work */\nprivate void OnCollisionEnter(Collision hit) {    \n  Debug.Log(gameObject.name + \" hits \" + hit.gameObject.name); \n}\nprivate void OnCollisionStay(Collision hit) {  \n  Debug.Log(gameObject.name + \" is hitting \" + hit.gameObject.name); \n}\nprivate void OnCollisionExit(Collision hit) { \n  Debug.Log(gameObject.name + \" stopped hitting \" + hit.gameObject.name); \n}\n\n// Trigger must be checked on one of the Colliders\nprivate void OnTriggerEnter(Collider hit) {    \n  Debug.Log(gameObject.name + \" just hit \" + hit.name); \n}\nprivate void OnTriggerStay(Collider hit) { \n  Debug.Log(gameObject.name + \" is hitting \" + hit.name); \n}\nprivate void OnTriggerExit(Collider hit) { \n  Debug.Log(gameObject.name + \" stopped hitting \" + hit.name); \n}\n \n// For 2D Colliders\nprivate void OnCollisionEnter2D(Collision2D hit) { }\nprivate void OnCollisionStay2D(Collision2D hit) { }\nprivate void OnCollisionExit2D(Collision2D hit) { }\nprivate void OnTriggerEnter2D(Collider2D hit) { }\nprivate void OnTriggerStay2D(Collider2D hit) { }\nprivate void OnTriggerExit2D(Collider2D hit) { }\n\n// Ray casting to detect the collision\nRay ray = Camera.main.ScreenPointToRay(Input.mousePosition);\nRaycastHit hit;\nif (Physics.Raycast(ray, out hit, 100)){\n  Debug.DrawLine(ray.origin, hit.point);\n  Debug.Log(\"Hit: \" + hit.collider.name);\n}\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "coroutine",
+  "title": "Coroutine",
+  "url": "/coroutine",
+  "category": "Events",
+  "keywords": null,
+  "content_html": "<h3 id=\"coroutine\">Coroutine</h3>\n\n<pre><code class=\"language-csharp\">// Create a Coroutine \nprivate IEnumerator CountSeconds(int count = 10)\n{\n  for (int i = 0; i &lt;= count; i++) {\n    Debug.Log(i + \" second(s) have passed\");\n    yield return new WaitForSeconds(1.0f);\n  }\n}\n// Call a Coroutine \nStartCoroutine(CountSeconds());\nStartCoroutine(CountSeconds(10));\n// Store and call a Coroutine from a variable \nprivate IEnumerator countSecondsCoroutine;\ncountSecondsCoroutine = CountSeconds();\nStartCoroutine(countSecondsCoroutine);\n// Stop a stored Coroutine \nStopCoroutine(countSecondsCoroutine);\n// Coroutine Return Types \n// Waits until the next Update() call\nyield return null; \n// Waits until the next FixedUpdate() call\nyield return new WaitForFixedUpdate(); \n// Waits until everything this frame has executed\nyield return new WaitForEndOfFrame(); \n// Waits for game time in seconds\nyield return new WaitForSeconds(float seconds); \n// Waits until a custom condition is met\nyield return new WaitUntil(() =&gt; MY_CONDITION); \n// Waits for a web request\nyield return new WWW(\"MY/WEB/REQUEST\"); \n// Waits until another Coroutine is completed\nyield return StartCoroutine(\"MY_COROUTINE\");\n</code></pre>\n\n<h3 id=\"yield-instructions\">Yield Instructions</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>WaitForFixedUpdate()</code></td>\n      <td>Waits until the next FixedUpdate() call</td>\n    </tr>\n    <tr>\n      <td><code>WaitForEndOfFrame()</code></td>\n      <td>Waits until everything this frame has executed</td>\n    </tr>\n    <tr>\n      <td><code>WaitForSeconds()</code></td>\n      <td>Waits for game time in seconds</td>\n    </tr>\n    <tr>\n      <td><code>WaitUntil()</code></td>\n      <td>Waits until a custom condition is met</td>\n    </tr>\n    <tr>\n      <td><code>WWW(\"MY/WEB/REQUEST\")</code></td>\n      <td>Waits for a web request</td>\n    </tr>\n    <tr>\n      <td><code>StartCoroutine(\"MY_COROUTINE\")</code></td>\n      <td>Waits until another Coroutine is completed</td>\n    </tr>\n  </tbody>\n</table>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "fmod",
+  "title": "FMOD",
+  "url": "/fmod",
+  "category": "Audio",
+  "keywords": null,
+  "content_html": "<pre><code class=\"language-csharp\">var emitter = RuntimeManager.CreateInstance(\"event:/Player/Attack\");\nemitter.Play();\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "gameobject",
+  "title": "GameObject",
+  "url": "/gameobject",
+  "category": "Scene",
+  "keywords": null,
+  "content_html": "<h3 id=\"instantiate\">Instantiate</h3>\n\n<pre><code class=\"language-csharp\">// Create a GameObject\nInstantiate(GameObject prefab);\nInstantiate(GameObject prefab, Transform parent);\nInstantiate(GameObject prefab, Vector3 position, Quaternion rotation);\nInstantiate(bullet);\nInstantiate(bullet, bulletSpawn.transform);\nInstantiate(bullet, Vector3.zero, Quaternion.identity);\nInstantiate(bullet, new Vector3(0, 0, 10), bullet.transform.rotation);\n</code></pre>\n\n<h3 id=\"find-gameobjects\">Find GameObjects</h3>\n\n<pre><code class=\"language-csharp\">GameObject.Find(\"NAME IN HIERARCHY\");\n\nGameObject.FindWithTag(\"TAG\");\nGameObject.FindGameObjectWithTag(\"TAG\");\nGameObject.FindGameObjectsWithTag(\"TAG\");\n\nGameObject.FindObjectOfType&lt;Rigidbody&gt;();\nGameObject.FindObjectsOfType&lt;Rigidbody&gt;();\n</code></pre>\n\n<h3 id=\"navigate-hierarchy\">Navigate Hierarchy</h3>\n\n<pre><code class=\"language-csharp\">// Get first child GameObject\nparent­Gam­eOb­jec­t.t­ran­sfo­rm.G­et­Child(0);\n\n// Add Component to GameObject\ngameObject.A­dd­Com­pon­ent­&lt;Rigidbody&gt;();\n\n// Get Component from GameObject\ngameObject.G­et­Com­pon­ent­&lt;Rigidbody&gt;();\n</code></pre>\n\n<h3 id=\"destroy\">Destroy</h3>\n\n<pre><code class=\"language-csharp\">Destroy(gameObject);\n\n// Do not destroy the target Object when loading a new Scene\nDontDestroyOnLoad(gameObject);\n</code></pre>\n\n<h3 id=\"accessing-components\">Accessing Components</h3>\n\n<pre><code class=\"language-csharp\">// Current GameObject\nRigidbody rb = GetComponent&lt;Rigidbody&gt;();\nRigidbody[] rb = GetComponents&lt;Rigidbody&gt;();\n\n// Children\nRigidbody rb = GetComponentInChildren&lt;Rigidbody&gt;();\nRigidbody[] rb = GetComponentsInChildren&lt;Rigidbody&gt;();\n\n// Parent\nRigidbody rb = GetComponentInParent&lt;Rigidbody&gt;();\nRigidbody[] rb = GetComponentsInParent&lt;Rigidbody&gt;();\n</code></pre>\n\n<h2 id=\"rigidbody\">Rigidbody</h2>\n\n<h3 id=\"collisions\">Collisions</h3>\n\n<p>Both the <strong>Rigidbody</strong> and the targeted <strong>GameObject</strong> needs to have a <code>Collider</code> attached. If they have the Physics will interact and the <code>OnCollisionEnter()</code> event will trigger.</p>\n\n<h3 id=\"actions\">Actions</h3>\n\n<pre><code class=\"language-csharp\">rb.AddForce(Vector3.up * 10, ForceMode.Impulse);\n</code></pre>\n<p>Adds a jump/force to the Rigidbody in a Y-axis direction.</p>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "input",
+  "title": "Input",
+  "url": "/input",
+  "category": "Events",
+  "keywords": null,
+  "content_html": "<h3 id=\"keyboard\">Keyboard</h3>\n\n<pre><code class=\"language-csharp\">if (Input.GetKeyDown(KeyCode.Space)) { \n    // Space key was Pressed\n}\nif (Input.GetKeyUp(KeyCode.W)) { \n    //W key was Released\n}\nif (Input.GetKey(KeyCode.UpArrow)) { \n    // Up Arrow key is being held down \n}\nif (Input.GetButtonDown(\"ButtonName\")) { \n    // Button was pressed\n}\nif (Input.GetButtonUp(\"ButtonName\")) { \n    // Button was released\n}\nif (Input.GetButton(\"ButtonName\")) { \n    // Button is being held down\n}\n</code></pre>\n<p>Button, Mouse &amp; Touch Input located under Edit » Project Settings » Input</p>\n\n<h3 id=\"mouse\">Mouse</h3>\n\n<pre><code class=\"language-csharp\">if (Input.GetAxis(\"Mouse X\") &lt; 0) {\n    // Mouse moved left\n}\n\nif (Input.GetAxis(\"Mouse Y\") &gt; 0) {\n    // Mouse moved up\n}\n\nif (Input.GetMouseButtonDown(0)) {\n    // Pressed primary button.\n}\n\nif (Input.GetMouseButtonDown(1)) {\n    // Pressed secondary button.\n}\n\nif (Input.GetMouseButtonDown(2)) {\n    // Pressed middle click.\n}\n</code></pre>\n\n<h3 id=\"touch\">Touch</h3>\n\n<pre><code class=\"language-csharp\">if (Input.touchCount &gt; 0) {\n    touch = Input.GetTouch(0);\n\n    if (touch.phase == TouchPhase.Began) {\n        // Touch began\n    }\n\n    if (touch.phase == TouchPhase.Moved) {\n        // Touch moves\n    }\n\n    if (touch.phase == TouchPhase.Ended) {\n        // Touch ended\n    }\n}\n</code></pre>",
+  "intro_html": "<p>The Input System for Keyboard, Mouse, Touchpad interactions.</p>",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "wip/intl-datetime",
+  "title": "Intl.DateTimeFormat",
+  "url": "/wip/intl-datetime",
+  "category": "Hidden",
+  "keywords": null,
+  "content_html": "<h3 id=\"parsing\">Parsing</h3>\n\n<h4 id=\"as-local-time\">As local time</h4>\n\n<pre><code class=\"language-js\">const date = new Date(2012, 11, 20, 3, 0, 0)\n</code></pre>\n\n<h4 id=\"as-utc-time\">As UTC time</h4>\n\n<pre><code class=\"language-js\">const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0))\n</code></pre>\n\n<h4 id=\"from-iso-strings\">From ISO strings</h4>\n\n<pre><code class=\"language-js\">const date = new Date('2018-04-20T12:00:00Z')\n</code></pre>\n\n<p>Note that JavaScript doesn’t “store” timezones in a date object. All these date objects, when expressed via <code>.toString()</code> or similar, will show the local timezone of the browser, regardless if you parsed UTC dates.</p>\n\n<h3 id=\"formatting-dates\">Formatting dates</h3>\n\n<h4 id=\"default-formatting\">Default formatting</h4>\n\n<pre><code class=\"language-js\">console.log(new Intl.DateTimeFormat().format(date))\n// → '12/19/2012' (assuming America/Los_Angeles)\n</code></pre>\n\n<h4 id=\"custom-locale\">Custom locale</h4>\n\n<pre><code class=\"language-js\">console.log(new Intl.DateTimeFormat('en-GB').format(date))\n// → '19/12/2012' (date-first)\n</code></pre>\n\n<h4 id=\"custom-timezone\">Custom timezone</h4>\n\n<pre><code class=\"language-js\">console.log(new Intl.DateTimeFormat('en-AU', {\n  timeZone: 'Australia/Sydney'\n}).format(date))\n// → '19/12/2012'\n</code></pre>\n\n<h3 id=\"custom-formats\">Custom formats</h3>\n\n<h4 id=\"time\">Time</h4>\n\n<pre><code class=\"language-js\">console.log(new Intl.DateTimeFormat('default', {\n  hour: 'numeric',\n  minute: 'numeric',\n  second: 'numeric'\n}).format(date))\n// → '2:00:00 pm'\n</code></pre>\n\n<h4 id=\"date\">Date</h4>\n\n<pre><code class=\"language-js\">console.log(new Intl.DateTimeFormat('en-US', {\n  year: 'numeric',\n  month: 'numeric',\n  day: 'numeric'\n}).format(date))\n// → '12/19/2012'\n</code></pre>\n\n<p>To specify options without a locale, use <code>'default'</code> as a locale.</p>\n\n<h3 id=\"all-options\">All options</h3>\n\n<pre><code class=\"language-js\">{\n  weekday: 'narrow' | 'short' | 'long',\n  era: 'narrow' | 'short' | 'long',\n  year: 'numeric' | '2-digit',\n  month: 'numeric' | '2-digit' | 'narrow' | 'short' | 'long',\n  day: 'numeric' | '2-digit',\n  hour: 'numeric' | '2-digit',\n  minute: 'numeric' | '2-digit',\n  second: 'numeric' | '2-digit',\n  timeZoneName: 'short' | 'long',\n\n  // Time zone to express it in\n  timeZone: 'Asia/Shanghai',\n  // Force 12-hour or 24-hour\n  hour12: true | false,\n\n  // Rarely-used options\n  hourCycle: 'h11' | 'h12' | 'h23' | 'h24',\n  formatMatcher: 'basic' | 'best fit'\n}\n</code></pre>\n\n<h2 id=\"references\">References</h2>\n\n<ul>\n  <li><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat\">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat</a></li>\n</ul>",
+  "intro_html": "<p><code>Intl.DateTimeFormat</code> is used to format date strings in JavaScript.</p>",
+  "description_html": "",
+  "tags": ["WIP"],
+  "updated": null
+},{
+  "id": "logging",
+  "title": "Logging",
+  "url": "/logging",
+  "category": "Monitoring",
+  "keywords": null,
+  "content_html": "<h3 id=\"logging\">Logging</h3>\n\n<pre><code class=\"language-csharp\">Debug.Log(object);\nDebug.L­og­Warning(object);\nDebug.L­og­Error(object);\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "monobehaviour",
+  "title": "MonoBehaviour",
+  "url": "/monobehaviour",
+  "category": "Scene",
+  "keywords": null,
+  "content_html": "<h3 id=\"functions\">Functions</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>private void Awake() {}</code></td>\n      <td>Called when the script is being loaded</td>\n    </tr>\n    <tr>\n      <td><code>private void OnEnable() {}</code></td>\n      <td>Called every time the object is enabled</td>\n    </tr>\n    <tr>\n      <td><code>private void Start() {}</code></td>\n      <td>Called on the frame when the script is enabled</td>\n    </tr>\n    <tr>\n      <td><code>private void Update() {}</code></td>\n      <td>Called once per frame</td>\n    </tr>\n    <tr>\n      <td><code>private void LateUpdate() {}</code></td>\n      <td>Called every frame after Update</td>\n    </tr>\n    <tr>\n      <td><code>private void FixedUpdate() {}</code></td>\n      <td>Called every Fixed Timestep</td>\n    </tr>\n    <tr>\n      <td><code>private void OnBecameVisible() {}</code></td>\n      <td>Called when the renderer is visible by any Camera</td>\n    </tr>\n    <tr>\n      <td><code>private void OnBecameInvisible() {}</code></td>\n      <td>Called when the renderer is no longer visible by any Camera</td>\n    </tr>\n    <tr>\n      <td><code>private void OnDrawGizmos() {}</code></td>\n      <td>Allows you to draw Gizmos in the Scene View</td>\n    </tr>\n    <tr>\n      <td><code>private void OnGUI() {}</code></td>\n      <td>Called multiple times per frame in response to GUI events</td>\n    </tr>\n    <tr>\n      <td><code>private void OnApplicationPause() {}</code></td>\n      <td>Called at the end of a frame when a pause is detected</td>\n    </tr>\n    <tr>\n      <td><code>private void OnDisable() {}</code></td>\n      <td>Called every time the object is disabled</td>\n    </tr>\n    <tr>\n      <td><code>private void OnDestroy() {}</code></td>\n      <td>Only called on previously active GameObjects that have been destroyed</td>\n    </tr>\n  </tbody>\n</table>\n\n<h3 id=\"execution-order\">Execution order</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>void Awake()</code></td>\n      <td><strong>1</strong></td>\n    </tr>\n    <tr>\n      <td><code>void OnEnable()</code></td>\n      <td><strong>2</strong></td>\n    </tr>\n    <tr>\n      <td><code>void Start()</code></td>\n      <td><strong>3</strong></td>\n    </tr>\n    <tr>\n      <td><code>void FixedU­pdate()</code></td>\n      <td><strong>4</strong></td>\n    </tr>\n    <tr>\n      <td><code>void Update()</code></td>\n      <td><strong>5</strong></td>\n    </tr>\n    <tr>\n      <td><code>void LateUpdate()</code></td>\n      <td><strong>6</strong></td>\n    </tr>\n    <tr>\n      <td><code>void OnDisable()</code></td>\n      <td><strong>7</strong></td>\n    </tr>\n    <tr>\n      <td><code>void OnDestroy()</code></td>\n      <td><strong>8</strong></td>\n    </tr>\n  </tbody>\n</table>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "wip/php",
+  "title": "PHP",
+  "url": "/wip/php",
+  "category": "PHP",
+  "keywords": null,
+  "content_html": "<h3 id=\"hello-world\">Hello world</h3>\n\n<h4 id=\"hellophp\">hello.php</h4>\n\n<pre><code class=\"language-php\">&lt;?php\nfunction greetMe($name): string\n{\n    return \"Hello, \" . $name . \"!\";\n}\n\n$message = greetMe($name);\necho $message;\n</code></pre>\n\n<p>All PHP files start with <code>&lt;?php</code>.</p>\n\n<p>See: <a href=\"https://php.net/manual/en/language.basic-syntax.phptags.php\">PHP tags</a></p>\n\n<h3 id=\"objects\">Objects</h3>\n\n<pre><code class=\"language-php\">&lt;?php\n\n$fruitsArray = array(\n    \"apple\" =&gt; 20,\n    \"banana\" =&gt; 30\n);\necho $fruitsArray['banana'];\n</code></pre>\n\n<p>Or cast as object</p>\n\n<pre><code class=\"language-php\">&lt;?php\n\n$fruitsObject = (object) $fruits;\necho $fruitsObject-&gt;banana;\n</code></pre>\n\n<h3 id=\"inspecting-objects\">Inspecting objects</h3>\n\n<pre><code class=\"language-php\">&lt;?php\nvar_dump($object)\n</code></pre>\n\n<p>Prints the contents of a variable for inspection.</p>\n\n<p>See: <a href=\"https://php.net/var_dump\">var_dump</a></p>\n\n<h3 id=\"classes\">Classes</h3>\n\n<pre><code class=\"language-php\">class Person\n{\n    public $name = '';\n}\n\n$person = new Person();\n$person-&gt;name = 'bob';\n\necho $person-&gt;name;\n</code></pre>\n\n<h3 id=\"getters-and-setters\">Getters and setters</h3>\n\n<pre><code class=\"language-php\">class Person \n{\n    private $name = '';\n\n    public function getName(): string\n    {\n        return $this-&gt;name;\n    }\n\n    public function setName(string $name)\n    {\n        $this-&gt;name = $name;\n        return $this;\n    }\n}\n\n$person = new Person();\n$person-&gt;setName('bob');\n\necho $person-&gt;getName();\n</code></pre>\n\n<h3 id=\"isset-vs-empty\">isset vs empty</h3>\n<pre><code class=\"language-php\">\n$options = [\n    'key' =&gt; 'value',\n    'blank' =&gt; '',\n    'nothing' =&gt; null,\n];\n\nvar_dump(isset($options['key']), empty($options['key'])); // true, false\nvar_dump(isset($options['blank']), empty($options['blank'])); // true, true\nvar_dump(isset($options['nothing']), empty($options['nothing'])); // false, true\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": null,
+  "updated": null
+},{
+  "id": "quaternion",
+  "title": "Quaternion",
+  "url": "/quaternion",
+  "category": "Geometry",
+  "keywords": null,
+  "content_html": "<pre><code class=\"language-csharp\">// Look at camera\nvar camPosition = Camera.main.transform.position;\ntransform.rotation = Quaternion.LookRotation(transform.position - camPosition);\n</code></pre>\n\n<h3 id=\"quaternion\">Quaternion</h3>\n\n<pre><code class=\"language-csharp\">// A Quaternion stores the rotation of the Transform in world space.\n// Quaternions are based on complex numbers and don't suffer from gimbal lock.\n// Unity internally uses Quaternions to represent all rotations.\n// You almost never access or modify individual Quaternion components (x,y,z,w); \n\n// A rotation 30 degrees around the y-axis\nQuaternion rotation = Quaternion.Euler(0, 30, 0);\n</code></pre>\n\n<h3 id=\"euler-angles\">Euler Angles</h3>\n\n<pre><code class=\"language-csharp\">// Euler angles are \"degree angles\" like 90, 180, 45, 30 degrees.\n// Quaternions differ from Euler angles in that they represent a point on a Unit Sphere (the radius is 1 unit).\n\n// Create a quaternion that represents 30 degrees about X, 10 degrees about Y\nQuaternion rotation = Quaternion.Euler(30, 10, 0);\n\n// Using a Vector\nVector3 EulerRotation = new Vector3(30, 10, 0);\nQuaternion rotation = Quaternion.Euler(EulerRotation);\n\n// Convert a transform's Quaternion angles to Euler angles\nQuaternion quaternionAngles = transform.rotation;\nVector3 eulerAngles = quaternionAngles.eulerAngles;\n</code></pre>\n\n<h2 id=\"transform\">Transform</h2>\n\n<pre><code class=\"language-csharp\">transform.rotation = new Quaternion(rotx, roty, rotz, rotw);\n</code></pre>\n<h4 id=\"a-quaternion-stores-the-rotation-of-the-transform-in-world-space-quaternions-are-based-on-complex-numbers-and-dont-suffer-from-gimbal-lock-unity-internally-uses-quaternions-to-represent-all-rotations\">A Quaternion stores the rotation of the Transform in world space. Quaternions are based on complex numbers and don’t suffer from gimbal lock. Unity internally uses Quaternions to represent all rotations.</h4>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "raycast",
+  "title": "Raycast",
+  "url": "/raycast",
+  "category": "Physics",
+  "keywords": null,
+  "content_html": "<h3 id=\"raycast\">Raycast</h3>\n\n<pre><code class=\"language-csharp\">RaycastHit hit;\n\n// Unlike this example, most of the time you should pass a layerMask as the last option to hit only to the ground\nif (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.5f)) {\n   Debug.log(\"Hit something below!\");\n}\n</code></pre>\n<pre><code class=\"language-csharp\">void FixedUpdate() {\n    // Bit shift the index of the layer (8) to get a bit mask\n    int layerMask = 1 &lt;&lt; 8;\n\n    // This would cast rays only against colliders in layer 8.\n    // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.\n    layerMask = ~layerMask;\n\n    RaycastHit hit;\n    // Does the ray intersect any objects excluding the player layer\n    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)) {\n        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);\n        Debug.Log(\"Did Hit\");\n    }\n}\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "singleton",
+  "title": "Singleton",
+  "url": "/singleton",
+  "category": "Design Patterns",
+  "keywords": null,
+  "content_html": "<h3 id=\"singleton\">Singleton</h3>\n<pre><code class=\"language-csharp\">// Define singleton class\npublic class SingletonClass: MonoBehaviour {\n    private static SomeClass instance;\n\n    public static SomeClass Instance { get { return instance; } }\n\n    private void Awake() {\n        if (instance != null &amp;&amp; instance != this) {\n            Destroy(this.gameObject);\n        } else {\n            instance = this;\n        }\n    }\n}\n\n// Use it in another class\npublic class AnotherClass: MonoBehaviour {\n    public Singleton instance;\n\n    private void Awake() {\n       instance = Singleton.Instance;\n    }\n}\n</code></pre>\n\n<h3 id=\"helper-class\">Helper class</h3>\n\n<pre><code class=\"language-csharp\">public class Singleton&lt;T&gt; : MonoBehaviour where T : Component {\n    private static T _instance;\n    public static T Instnace {\n        get {\n            if (_instance == null) {\n                _instance = FindObjectOfType&lt;T&gt;();\n                if (_instance == null) {\n                    GameObject obj = new GameObject();\n                    _instance = obj.AddComponent&lt;T&gt;();\n                }\n            }\n            return _instance;\n        }\n    }\n\n    protected virtual void Awake() {\n        _instance = this as T;\n    }\n}\n</code></pre>\n<p><strong>Usage example</strong></p>\n<pre><code class=\"language-csharp\">public class GameManager : Singleton&lt;GameManager&gt; {\n    void Start() { }\n    void Update() { }\n}\n</code></pre>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "solid",
+  "title": "SOLID (object-oriented design)",
+  "url": "/solid",
+  "category": "Design Patterns",
+  "keywords": null,
+  "content_html": "<h3 id=\"solid-principles\">SOLID Principles</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>(S) SRP</code></td>\n      <td>Single Respon­sab­ility Principle</td>\n    </tr>\n    <tr>\n      <td><code>(O) OCP</code></td>\n      <td>Open Closed Principle</td>\n    </tr>\n    <tr>\n      <td><code>(L) LSP</code></td>\n      <td>Liskov’s Substi­tution Principle</td>\n    </tr>\n    <tr>\n      <td><code>(I) ISP</code></td>\n      <td>Interface Segreg­ation Principle</td>\n    </tr>\n    <tr>\n      <td><code>(D) DIP</code></td>\n      <td>Dependency Inversion Principle</td>\n    </tr>\n  </tbody>\n</table>\n\n<h3 id=\"s-single-responsability-principle\">(S) Single Respon­sab­ility Principle</h3>\n\n<p><strong>That 1% error prone classes with 99% of the total game logic…</strong></p>\n\n<p>Split the game logic into small classes with simple code.\nOne class does only one thing and has only one reason to failure.</p>\n\n<p><strong>In Unity</strong></p>\n\n<p>Prefer tiny compon­ents.</p>\n\n<h3 id=\"o-open-closed-principle\">(O) Open Closed Principle</h3>\n\n<p><strong>New features broke old ones</strong>\n<strong>Classes open for extension, but close for modifi­cation.</strong>\nUse abstracts to extends features and define how it’ll works.</p>\n\n<h3 id=\"l-liskovs-substitution-principle\">(L) Liskov’s Substi­tution Principle</h3>\n\n<p><strong>Extending the classes broke them</strong></p>\n\n<p>If two different types have the same base type, they should both works for all members that use the base type.\nTrust the type as the base type.</p>\n\n<h3 id=\"i-interface-segregation-principle\">(I) Interface Segreg­ation Principle</h3>\n\n<p><strong>Large interfaces are time expensive</strong></p>\n\n<p>Break them into small, focused ones. Use only one member or member purpose per interface.\nKeep in mind that one class can implement many interf­aces.</p>\n\n<p><strong>In Unity Editor</strong></p>\n\n<p>The Inspector doesn’t support interfaces, but you can use them for internal methods or third party logic.</p>\n\n<h3 id=\"d-dependency-inversion-principle\">(D) Dependency Inversion Principle</h3>\n\n<p><strong>Using classes with shared logic but different featur­es…</strong></p>\n\n<p>Use polymo­rphism instead of hard refere­nces, through interfaces or abstract classes.</p>\n\n<p><strong>In Unity Editor</strong></p>\n\n<p>Use Abstract classes or Scriptable Objects if you want something in the inspector (since interfaces aren’t suppor­ted).</p>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "time",
+  "title": "Time",
+  "url": "/time",
+  "category": "Events",
+  "keywords": null,
+  "content_html": "<h3 id=\"runtime\">Runtime</h3>\n\n<pre><code class=\"language-csharp\">Time.timeScale = 0;\n</code></pre>\n<p>Pause time</p>\n\n<pre><code class=\"language-csharp\">float timePassedSinceLastFrame = Time.deltaTime;\n</code></pre>\n<p>The time in seconds it took to complete the last frame. Use with <strong>Update()</strong> and <strong>LateUpdate()</strong></p>\n\n<pre><code class=\"language-csharp\">float timeSinceStartOfGame = Time.time;\n</code></pre>\n<p>The time in seconds since the start of the game</p>\n\n<pre><code class=\"language-csharp\">float physicsInterval =  Time.fixedDeltaTime;\n</code></pre>\n<p>The interval in seconds at which physics and fixed frame rate updates are performed. Use with <strong>FixedUpdate()</strong></p>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "vector",
+  "title": "Vector",
+  "url": "/vector",
+  "category": "Geometry",
+  "keywords": null,
+  "content_html": "<h2 id=\"constants\">Constants</h2>\n\n<h3 id=\"vector3\">Vector3</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>Vector3.right</code></td>\n      <td><code>(1, 0, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector3.left</code></td>\n      <td><code>(-1, 0, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector3.up</code></td>\n      <td><code>(0, 1, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector3.down</code></td>\n      <td><code>(0, -1, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector3.forward</code></td>\n      <td><code>(0, 0, 1)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector3.back</code></td>\n      <td><code>(0, 0, -1)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector3.zero</code></td>\n      <td><code>(0, 0, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector3.one</code></td>\n      <td><code>(1, 1, 1)</code></td>\n    </tr>\n  </tbody>\n</table>\n\n<h3 id=\"vector2\">Vector2</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>Vector2.right</code></td>\n      <td><code>(1, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector2.left</code></td>\n      <td><code>(-1, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector2.up</code></td>\n      <td><code>(0, 1)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector2.down</code></td>\n      <td><code>(0, -1)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector2.zero</code></td>\n      <td><code>(0, 0)</code></td>\n    </tr>\n    <tr>\n      <td><code>Vector2.one</code></td>\n      <td><code>(1, 1)</code></td>\n    </tr>\n  </tbody>\n</table>\n\n<h3 id=\"additional-constants\">Additional constants</h3>\n\n<table>\n  <tbody>\n    <tr>\n      <td><code>myVector.magnitude</code></td>\n      <td>Length of this Vector</td>\n    </tr>\n    <tr>\n      <td><code>myVector.normalized</code></td>\n      <td>Keeps direction, but reduces length to 1</td>\n    </tr>\n  </tbody>\n</table>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": ["Featured"],
+  "updated": null
+},{
+  "id": "assets/css/style.css",
+  "title": null,
+  "url": "/assets/css/style.css",
+  "category": "Others",
+  "keywords": null,
+  "content_html": "<p>@import “jekyll-theme-primer”;</p>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": null,
+  "updated": null
+},{
+  "id": "redirects.json",
+  "title": null,
+  "url": "/redirects.json",
+  "category": "Others",
+  "keywords": null,
+  "content_html": "<p>{}</p>",
+  "intro_html": "",
+  "description_html": "",
+  "tags": null,
+  "updated": null
+}
+]
+
