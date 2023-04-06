@@ -11,8 +11,9 @@
     "lodash.noop": "^3.0.1",
     "modularscale-sass": "^3.0.10",
     "onmount": "^1.3.0",
-    "postcss-modules": "^2.0.0",
+    "postcss-modules": "^6.0.0",
     "prismjs": "^1.20.0",
+    "run-p": "^0.0.0",
     "sanitize.css": "^11.0.1",
     "sass": "^1.26.8"
   },
@@ -21,10 +22,10 @@
     "@babel/preset-env": "^7.10.2",
     "@rstacruz/prettier-plugin-markdown-code-fences": "^1.0.0",
     "jest": "26.0.1",
-    "jest-html": "1.5.0",
-    "netlify-plugin-minify-html": "^0.2.3",
+    "jest-html": "^1.5.0",
+    "netlify-plugin-minify-html": "^0.2.3", 
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.4",
+    "parcel-bundler": "^1.8.1",
     "prettier": "^2.0.5",
     "wait-on": "^5.0.1"
   },
@@ -39,7 +40,7 @@
   "private": true,
   "repository": "https://github.com/rstacruz/cheatsheets.git",
   "scripts": {
-    "build": "run-s -s 'parcel:*:build' jekyll:build",
+    "build": "n -s 'parcel:*:build' jekyll:build",
     "dev": "run-p -sl jekyll:watch 'parcel:*:watch'",
     "jekyll:build": "bundle exec jekyll build",
     "jekyll:watch": "wait-on assets/packed/app.js && wait-on _includes/2017/critical/critical-sheet.css && bundle exec jekyll serve --safe --trace --drafts --watch --incremental --host ${HOST:-0.0.0.0} --port ${PORT:-3000}",
