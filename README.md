@@ -13,4 +13,4 @@ So anyone can contribute to this project - if you see something that's missing, 
 Happu building!
 
 ## Site
-[https://unityhints.dev/](https://unityhints.dev/)
+[https://www.unityhints.dev/](https://www.unityhints.dev/)
