@@ -1,6 +1,6 @@
 {
-  "name": "cheatsheets",
-  "description": "Devhints.io",
+  "name": "UnityHints.dev",
+  "description": "This is a collection of Cheatsheets for Unity Developers.",
   "version": "1.0.0",
   "author": "Snuffish <snuffish90@gmail.com>",
   "dependencies": {
@@ -37,7 +37,7 @@
   "license": "MIT",
   "main": "index.js",
   "private": true,
-  "repository": "https://github.com/rstacruz/cheatsheets.git",
+  "repository": "https://github.com/snuffish/unityhints.dev.git",
   "scripts": {
     "build": "run-s -s 'parcel:*:build' jekyll:build",
     "dev": "run-p -sl jekyll:watch 'parcel:*:watch'",
