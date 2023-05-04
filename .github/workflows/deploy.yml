@@ -48,8 +48,3 @@ jobs:
           REPOSITORY_NAME: snuffish/unityhints.dev
           BRANCH: gh-pages
           FOLDER: _site
-
-      - name: "Notify Slack 📢"
-        uses: rtCamp/action-slack-notify@v2.0.2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
