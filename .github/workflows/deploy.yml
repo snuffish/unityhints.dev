@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.14.2'
-          cache: yarn
+          cache: npm
 
       - name: Use Ruby
         uses: ruby/setup-ruby@v1
@@ -31,8 +31,8 @@ jobs:
           ruby-version: '2.7.5'
           bundler-cache: true
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: npm install --frozen-lockfile
+      - run: npm build
 
       - name: "Deploy to gh-pages 🚀"
         uses: JamesIves/github-pages-deploy-action@releases/v3
