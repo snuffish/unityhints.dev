@@ -40,7 +40,7 @@
   "private": true,
   "repository": "https://github.com/rstacruz/cheatsheets.git",
   "scripts": {
-    "build": "n -s 'parcel:*:build' jekyll:build",
+    "build": "run-s -s 'parcel:*:build' jekyll:build",
     "dev": "run-p -sl jekyll:watch 'parcel:*:watch'",
     "jekyll:build": "bundle exec jekyll build",
     "jekyll:watch": "wait-on assets/packed/app.js && wait-on _includes/2017/critical/critical-sheet.css && bundle exec jekyll serve --safe --trace --drafts --watch --incremental --host ${HOST:-0.0.0.0} --port ${PORT:-3000}",
