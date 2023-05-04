@@ -9,10 +9,16 @@ prism_languages: [csharp]
 ### Raycast
 
 ```csharp
+float distance = 0.5f;
+
+if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distance)) {
+    Debug.log("Hit some obstacle!");
+}
+
 RaycastHit hit;
 
 // Unlike this example, most of the time you should pass a layerMask as the last option to hit only to the ground
-if (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.5f)) {
+if (Physics.Raycast(transform.position, -Vector3.up, out hit, distance)) {
    Debug.log("Hit something below!");
 }
 ```
