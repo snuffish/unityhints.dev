@@ -37,15 +37,15 @@ jobs:
       - name: "Deploy to gh-pages 🚀"
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
           BRANCH: gh-pages
           FOLDER: _site
 
       - name: "Deploy to mirror 🚀"
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          REPOSITORY_NAME: rstacruz/devhints-mirror
+          ACCESS_TOKEN: ${{ secrets.TOKEN }}
+          REPOSITORY_NAME: snuffish/unityhints.dev
           BRANCH: gh-pages
           FOLDER: _site
 
