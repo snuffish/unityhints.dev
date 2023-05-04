@@ -2,7 +2,7 @@
   "name": "cheatsheets",
   "description": "Devhints.io",
   "version": "1.0.0",
-  "author": "Rico Sta. Cruz <rstacruz@users.noreply.github.com>",
+  "author": "Snuffish <snuffish90@gmail.com>",
   "dependencies": {
     "autoprefixer": "^9.8.2",
     "dom101": "^2.2.1",
@@ -23,7 +23,7 @@
     "@rstacruz/prettier-plugin-markdown-code-fences": "^1.0.0",
     "jest": "26.0.1",
     "jest-html": "^1.5.0",
-    "netlify-plugin-minify-html": "^0.2.3", 
+    "netlify-plugin-minify-html": "^0.2.3",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.8.1",
     "prettier": "^2.0.5",
