@@ -15,6 +15,9 @@ jobs:
           # This workflow generates GitHub pages, but IT IS NOT USED. It is
           # only generated as an emergency fallback in case Netlify goes down 😊
 
+      - name: "Setup Git"
+            run: git config --global init.defaultBranch master
+
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
