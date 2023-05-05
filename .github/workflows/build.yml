@@ -21,6 +21,6 @@ jobs:
           bundler-cache: true
 
       - run: npm install
-      - run: npm build
-      - run: npm test
-      - run: npm test:smoke
+      - run: npm run build
+      - run: npm run test
+      - run: npm run test:smoke
