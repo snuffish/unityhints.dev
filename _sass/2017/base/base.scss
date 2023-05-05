@@ -2,7 +2,7 @@
  * Base
  */
 
- @use '../variables.scss';
+@use '../variables.scss' as *;
 
 html, body {
   background: $base-body;
