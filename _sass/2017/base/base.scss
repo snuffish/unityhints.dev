@@ -4,6 +4,7 @@
 
 @use '../variables.scss' as *;
 @use '../utils/font-size' as *;
+@use '../../2017/mixins/typography' as *;
 
 html, body {
   background: $base-body;
