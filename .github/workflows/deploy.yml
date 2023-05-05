@@ -34,7 +34,7 @@ jobs:
           ruby-version: '2.7.5'
           bundler-cache: true
 
-      - run: npm install --frozen-lockfile
+      - run: npm install
       - run: npm run build
 
       - name: "Deploy to gh-pages 🚀"
