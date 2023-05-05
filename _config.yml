@@ -10,7 +10,7 @@ plugins:
 
 exclude:
   - .babelrc
-  - .cache
+  - .parcel-cache
   - CNAME
   - CONTRIBUTING.md
   - cssnano.config.js
