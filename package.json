@@ -5,6 +5,7 @@
   "author": "Snuffish <snuffish90@gmail.com>",
   "dependencies": {
     "autoprefixer": "^9.8.2",
+    "core-js": "^3.30.1",
     "dom101": "^2.2.1",
     "hint.css": "^2.6.0",
     "isotope-layout": "^3.0.6",
