@@ -1,5 +1,7 @@
 // https://github.com/modularscale/modularscale-sass v3.0.3
 
+@use 'sass:math';
+
 // Ratios
 $double-octave    : 4                 ;
 $pi               : 3.14159265359     ;
@@ -110,7 +112,7 @@ $modularscale     : ()        !default;// Parse settings starting with defaults.
 // It is used here because calc() doesn't do unit logic
 // AND target ratios use units as a hack to get a number.
 @function ms-unitless($val) {
-  @return ($val / ($val - $val + 1));
+  @return math.div($val / ($val - $val + 1));
 }// Basic list sorting
 // Would like to replace with http://sassmeister.com/gist/30e4863bd03ce0e1617c
 // Unfortunately libsass has a bug with passing arguments into the min() funciton.
