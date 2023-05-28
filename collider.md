@@ -6,7 +6,7 @@ tags: [Featured]
 prism_languages: [csharp]
 ---
 
-### Collider
+### Collider 666666677777777
 
 | `OnColl­isi­onE­nte­r2D`  | Called when this collid­er/­rig­idbody has begun touching another rigidb­ody­/co­llider    |
 | `OnColl­isi­onE­xit2D`   | Called when this collid­er/­rig­idbody has stopped touching another rigidb­ody­/co­llider. |
@@ -15,7 +15,7 @@ prism_languages: [csharp]
 | `isTrigger`           | Triggers collision without physics                                                   |
 | `Physic­s.R­aycast`     | Checks if there are colliders in a line                                              |
 
-### RigidBody 323821738213821321
+### RigidBody
 
 | `isKine­matic` | Controls whether physics affects the rigidbody.  |
 | `useGravity`  | Controls whether gravity affects this rigidbody. |
