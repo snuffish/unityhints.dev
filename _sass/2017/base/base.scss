@@ -2,6 +2,9 @@
  * Base
  */
 
+@use '../variables.scss' as *;
+@use '../utils/font-size' as *;
+
 html, body {
   background: $base-body;
   font-family: $body-font;

@@ -15,6 +15,9 @@ jobs:
           # This workflow generates GitHub pages, but IT IS NOT USED. It is
           # only generated as an emergency fallback in case Netlify goes down 😊
 
+      - name: "Setup Git"
+        run: git config --global init.defaultBranch master
+
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -23,7 +26,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.14.2'
-          cache: yarn
+          cache: npm
 
       - name: Use Ruby
         uses: ruby/setup-ruby@v1
@@ -31,8 +34,8 @@ jobs:
           ruby-version: '2.7.5'
           bundler-cache: true
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: npm install
+      - run: npm run build
 
       - name: "Deploy to gh-pages 🚀"
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -44,12 +47,7 @@ jobs:
       - name: "Deploy to mirror 🚀"
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          REPOSITORY_NAME: rstacruz/devhints-mirror
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY_NAME: snuffish/unityhints.dev
           BRANCH: gh-pages
           FOLDER: _site
-
-      - name: "Notify Slack 📢"
-        uses: rtCamp/action-slack-notify@v2.0.2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}

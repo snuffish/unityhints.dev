@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .MarkdownBody ul.-six-column {
   & {
     display: flex;
@@ -5,14 +7,14 @@
   }
 
   & > li {
-    flex: 0 0 (100% / 6);
+    flex: 0 0 math.div(100% / 6);
 
     @media (max-width: 480px) {
-      flex: 0 0 (100% / 2);
+      flex: 0 0 math.div(100% / 2);
     }
 
     @media (max-width: 768px) {
-      flex: 0 0 (100% / 4);
+      flex: 0 0 math.div(100% / 4);
     }
   }
 }
@@ -24,14 +26,14 @@
   }
 
   & > li {
-    flex: 0 0 (100% / 4);
+    flex: 0 0 math.div(100% / 4);
 
     @media (max-width: 480px) {
-      flex: 0 0 (100% / 2);
+      flex: 0 0 math.div(100% / 2);
     }
 
     @media (max-width: 768px) {
-      flex: 0 0 (100% / 3);
+      flex: 0 0 math.div(100% / 3);
     }
   }
 }
