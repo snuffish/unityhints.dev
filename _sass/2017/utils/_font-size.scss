@@ -1,3 +1,5 @@
+@use '../../vendor/modularscale/modularscale' as *;
+
 @mixin font-size ($n) {
   @include ms-respond(font-size, $n);
 }
